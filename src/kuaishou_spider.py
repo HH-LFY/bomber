@@ -68,7 +68,7 @@ class KuaishouSpider(object):
 if __name__ == '__main__':
     print "--------"
     spider = KuaishouSpider()
-    origin_user = 200000000
+    origin_user = 200000101
     old_data = "already_check_user_kuaishou"
     with open(old_data,"r") as fr:
         rows = fr.readlines()
@@ -76,7 +76,7 @@ if __name__ == '__main__':
             origin_user = int(rows[-1].replace("\n",""))
             print "get origin_user:",str(origin_user)
 
-    fw = open(old_data,"a")
+    fw = open(old_data,"a+")
     for i in xrange(10000000):
         sleep_random()
         start_user = str(origin_user + i)
