@@ -53,4 +53,4 @@ class PinancaifubaoSpider(object):
             return False
 
 if __name__ == '__main__':
-    print PinancaifubaoSpider.send_sms_verify_code("17621203843")
+    print PinancaifubaoSpider.send_sms_verify_code("")
