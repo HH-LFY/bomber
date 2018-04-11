@@ -11,7 +11,9 @@ class PinancaifubaoSpider(object):
     def __init__(self):
         super(PinancaifubaoSpider, self).__init__()
 
-
+    # author:songpeng.huang
+    # 2018年04月11日17:56:17
+    # 平安财富短信验证接口
     # 同一个手机号，1分钟内之内只能发一次
     @classmethod
     def send_sms_verify_code(cls,phone):
