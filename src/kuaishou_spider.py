@@ -8,6 +8,8 @@ import threading
 import requests
 from bs4 import BeautifulSoup
 
+from util.daemon import run_daemon
+
 def mkdir(path):
     folder = os.path.exists(path)
     if not folder:
@@ -66,9 +68,10 @@ class KuaishouSpider(object):
 
 
 if __name__ == '__main__':
+    #run_daemon()
     print "--------"
     spider = KuaishouSpider()
-    origin_user = 200000101
+    origin_user = 300000101
     old_data = "already_check_user_kuaishou"
     with open(old_data,"r") as fr:
         rows = fr.readlines()
@@ -77,11 +80,14 @@ if __name__ == '__main__':
             print "get origin_user:",str(origin_user)
 
     fw = open(old_data,"a+")
-    for i in xrange(10000000):
+    for i in xrange(70000):
         sleep_random()
         start_user = str(origin_user + i)
         print "check:",start_user
         fw.write("%s\n" % start_user)
-        spider.search_user_video(start_user)
+	try:
+            spider.search_user_video(start_user)
+	except:
+	    print "is error"
 
 
