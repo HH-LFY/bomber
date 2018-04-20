@@ -6,17 +6,19 @@ import random
 import requests
 import threading
 
-class PinancaifubaoBomber(object):
+from common_bomber import CommonBomber
+
+class PinancaifubaoBomber(CommonBomber):
     """docstring for PinancaifubaoSpider"""
     def __init__(self):
-        super(PinancaifubaoSpider, self).__init__()
+        super(PinancaifubaoBomber, self).__init__()
+        self.name = self.__class__.__name__.replace('Bomber','')
 
     # author:songpeng.huang
     # 2018年04月11日17:56:17
     # 平安财富短信验证接口
     # 同一个手机号，1分钟内之内只能发一次
-    @classmethod
-    def send_sms_verify_code(cls,phone):
+    def send_sms_verify_code(self,phone):
         url = "https://cfb.pingan.com/ncfb/v3/nts_cfb_intf_mop.mopSmsSend"
         querystring = {"_":"1523435457993"}
         payload = {
@@ -50,9 +52,11 @@ class PinancaifubaoBomber(object):
         print response
         json_text = json.loads(response.text)
         if json_text["responseMsg"] == u"成功":
+            print self.name,"send_sms_verify_code success."
             return True
         else:
             return False
 
 if __name__ == '__main__':
-    print PinancaifubaoBomber.send_sms_verify_code("17621203843")
+    bomber = PinancaifubaoBomber()
+    print bomber.send_sms_verify_code("17621203843")
