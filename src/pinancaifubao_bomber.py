@@ -45,8 +45,7 @@ class PinancaifubaoBomber(CommonBomber):
             'x-requested-with': "XMLHttpRequest",
             'cookie': "WEBTRENDS_ID=4.0.4.33-1284388608.30658927; WT-FPC=id=4.0.4.33-1284388608.30658927:lv=1523435424421:ss=1523435408771:fs=1523435408771:pn=2:vn=1",
             'connection': "keep-alive",
-            'referer': "https://cfb.pingan.com/m/campaigns/m2017-hqy-newHand.html?WT.mc_id=cfb-pingan-763xim-003",
-            'postman-token': "ac0b07d8-13b4-8241-3a10-e542de5f4063"
+            'referer': "https://cfb.pingan.com/m/campaigns/m2017-hqy-newHand.html?WT.mc_id=cfb-pingan-763xim-003"
             }
         response = requests.request("POST", url, data=json.dumps(payload), headers=headers, params=querystring)
         print response
