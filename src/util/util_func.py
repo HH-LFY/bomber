@@ -12,6 +12,11 @@ def get_url_bulitwith_info(url):
 def get_url_data_by_urllib2(url):
     return urllib2.urlopen(url).read()
 
+def get_mb_size(byte_size):
+    kb = byte_size/1024.0
+    mb = kb/1024.0
+    return mb
+
 def main():
     url = 'http://couplee.wang/'
     print get_url_bulitwith_info(url)

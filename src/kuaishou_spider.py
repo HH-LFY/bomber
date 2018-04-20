@@ -16,7 +16,6 @@ def mkdir(path):
         os.makedirs(path)
 
 def sleep_random():
-    # pass
     time.sleep(random.randint(7,11))
 
 class KuaishouSpider(object):

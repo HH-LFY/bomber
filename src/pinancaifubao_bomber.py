@@ -6,7 +6,7 @@ import random
 import requests
 import threading
 
-class PinancaifubaoSpider(object):
+class PinancaifubaoBomber(object):
     """docstring for PinancaifubaoSpider"""
     def __init__(self):
         super(PinancaifubaoSpider, self).__init__()
@@ -47,7 +47,7 @@ class PinancaifubaoSpider(object):
             'postman-token': "ac0b07d8-13b4-8241-3a10-e542de5f4063"
             }
         response = requests.request("POST", url, data=json.dumps(payload), headers=headers, params=querystring)
-        print response.text
+        print response
         json_text = json.loads(response.text)
         if json_text["responseMsg"] == u"成功":
             return True
@@ -55,4 +55,4 @@ class PinancaifubaoSpider(object):
             return False
 
 if __name__ == '__main__':
-    print PinancaifubaoSpider.send_sms_verify_code("")
+    print PinancaifubaoBomber.send_sms_verify_code("17621203843")
