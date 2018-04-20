@@ -12,6 +12,7 @@ class PinancaifubaoBomber(CommonBomber):
     """docstring for PinancaifubaoSpider"""
     def __init__(self):
         super(PinancaifubaoBomber, self).__init__()
+        print self.name," start "
         self.name = self.__class__.__name__.replace('Bomber','')
 
     # author:songpeng.huang

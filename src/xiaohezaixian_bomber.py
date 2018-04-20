@@ -14,7 +14,7 @@ class XiaohezaixianBomber(CommonBomber):
     # author:songpeng.huang
     # 2018年04月20日18:01:52
     # 小荷在线短信验证接口
-    # 同一个手机号，1分钟内之内只能发一次
+    # 同一个手机号，1分钟内之内只能发一次,且半小时内只能连续获取三次
     def send_sms_verify_code(self,phone):
         url = "https://www.xiaohe666.com/app_identify"
 
@@ -41,8 +41,9 @@ class XiaohezaixianBomber(CommonBomber):
             print self.name,"send_sms_verify_code success."
             return True
         else:
+            print json_text['message']
             return False
 
 if __name__ == '__main__':
     bomber = XiaohezaixianBomber()
-    print bomber.send_sms_verify_code("13197916576")
+    print bomber.send_sms_verify_code("13524480407")
