@@ -46,4 +46,4 @@ class XiaohezaixianBomber(CommonBomber):
 
 if __name__ == '__main__':
     bomber = XiaohezaixianBomber()
-    print bomber.send_sms_verify_code("13524480407")
+    print bomber.send_sms_verify_code("17621203843")
